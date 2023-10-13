@@ -16,11 +16,11 @@
         $listbinhluan=pdo_query($sql);
         return $listbinhluan;
     }
-    function insert_binhluan($idpro,$noidung){
+    function insert_binhluan($idpro,$idUser,$noidung){
         $date = date('Y-m-d');
         $sql = "
             INSERT INTO `binhluan`(`noidung`, `iduser`, `idpro`, `ngaybinhluan`) 
-            VALUES ('$noidung','1','$idpro','$date');
+            VALUES ('$noidung',$idUser,'$idpro','$date');
         ";
         pdo_execute($sql);
     }
