@@ -15,17 +15,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
     switch ($act) {
         case "sanpham":
-            if (isset($_POST['keyword']) && $_POST['keyword'] != 0) {
-                $kyw = $_POST['keyword'];
-            } else {
-                $kyw = "";
-            }
-            if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
-                $iddm = $_GET['iddm'];
-            } else {
-                $iddm = 0;
-            }
-            $dssp = list_category_product($kyw, $iddm);
+        
+            $dssp = list_category_product($iddm);
             $tendm = load_ten_dm($iddm);
             include "view/danhmuc/sanpham.php";
             break;

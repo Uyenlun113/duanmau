@@ -72,14 +72,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         case "listsp":
             if (isset($_POST['listok']) && ($_POST['listok'])) {
-                $kyw = $_POST['kyw'];
+                $valueSearch = $_POST['valueSearch'];
                 $iddm = $_POST['iddm'];
             } else {
-                $kyw = '';
+                $valueSearch = '';
                 $iddm = 0;
             }
+            echo( $valueSearch);
             $listdanhmuc = loadall_danhmuc();
-            $listsanpham = loadall_sanpham($kyw, $iddm);
+            $listsanpham = list_product($valueSearch, $iddm);
             include "sanpham/list.php";
             break;
         case "xoasp":

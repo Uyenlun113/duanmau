@@ -13,18 +13,27 @@ function delete_sanpham($id)
    
 }
 
-function list_category_product($kyw="", $iddm)
+function list_category_product($valueSearch="", $iddm)
 {
     $sql="select * from sanpham where trangthai = 0 and iddm=".$iddm;
-    if ($kyw != "") {
-        $sql .= " and name like '%" . $kyw . "%'";
-    }
-    if ($iddm > 0) {
-        $sql .= " and iddm ='" . $iddm . "'";
-    }
     $sql .= " order by id desc";
     $listCategoryProduct = pdo_query($sql);
     return  $listCategoryProduct;
+}
+
+function list_product($valueSearch, $iddm)
+{
+    if($iddm==0){
+        $sql = "SELECT * FROM sanpham WHERE trangthai = 0 AND name LIKE '%" . $valueSearch . "%'";
+        $sanpham = pdo_query($sql);
+        return $sanpham;
+    }
+    else{
+$sql = "SELECT * FROM sanpham WHERE trangthai = 0 AND name LIKE '%" . $valueSearch . "%' AND iddm = " . $iddm;
+        $sanpham = pdo_query($sql);
+        return $sanpham;
+    }
+   
 }
 
 function loadone_sanpham($id)

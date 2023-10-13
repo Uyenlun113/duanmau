@@ -3,9 +3,9 @@
     <h1>DANH SÁCH SẢN PHẨM</h1>
   </div>
   <form action="index.php?act=listsp" method="post">
-    <input type="text" name="kyw" id="">
+    <input type="text" name="valueSearch" id="">
     <select name="iddm" id="">
-      <option value="0" selected>Tất cả</option>
+      <option value="0">Tất cả</option>
       <?php
             foreach ($listdanhmuc as $danhmuc) {
                 extract($danhmuc);
