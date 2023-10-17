@@ -13,7 +13,7 @@ function delete_sanpham($id)
    
 }
 
-function list_category_product($valueSearch="", $iddm)
+function list_category_product( $iddm)
 {
     $sql="select * from sanpham where trangthai = 0 and iddm=".$iddm;
     $sql .= " order by id desc";

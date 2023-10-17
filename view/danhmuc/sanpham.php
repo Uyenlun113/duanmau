@@ -10,7 +10,6 @@ include "view/header.php";
         $i=0;
         $hinh = $img_path . $sp['img'];
         $linksp = "index.php?act=sanphamct&idsp=" . $sp['id'];
-
         $mr = ($i == 2 || $i == 5 || $i == 8) ? "" : "mr";
         ?>
       <div class=" card" style="border-radius: 15px;">
@@ -36,7 +35,10 @@ include "view/header.php";
           </div>
           <div class="card-body">
             <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
-              <button type="button" class="btn btn-primary w-60">Thêm giỏ hàng</button>
+              <form method="post" action="index.php?act=add_to_cart">
+                <input type="hidden" name="product_id" value="<?= $sp['id'] ?>">
+                <input type="submit" name="add_to_cart" value="Thêm giỏ hàng">
+              </form>
             </div>
           </div>
         </a>

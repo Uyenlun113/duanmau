@@ -1,6 +1,5 @@
-        <!-- FOOTER -->
         <footer class="box_footer row mb demo">
-         <div id="footer">
+          <div id="footer">
             <div class="footer-left">
               <div class="footer-logo">
                 <img src="./img/FPTShop_logo.jpg" alt="" />
@@ -13,17 +12,17 @@
                     Tầng 2 tòa nhà T10, Times City Vĩnh Tuy, Hai Bà Trưng, Hà Nội.
                   </p>
                 </div>
-      
+
                 <div>
                   <i class="fa-solid fa-phone-flip"></i>
                   <p>1900.63.69.36</p>
                 </div>
-      
+
                 <div>
                   <i class="fa-solid fa-envelope"></i>
                   <p>info@tocotocotea.com</p>
                 </div>
-      
+
                 <p>Số ĐKKD: 0106341306. Ngày cấp: 16/03/2017.</p>
                 <p>Nơi cấp: Sở kế hoạch và Đầu tư Thành phố Hà Nội.</p>
                 <div class="icons">
@@ -33,19 +32,16 @@
                   <i class="fa-brands fa-square-twitter"></i>
                   <i class="fa-brands fa-google-plus"></i>
                 </div>
-      
+
                 <div class="images">
                   <div class="image">
-                    <img
-                      src="./img/anh4.jpg"
-                      alt=""
-                    />
+                    <img src="./img/anh4.jpg" alt="" />
                   </div>
                   <div class="image">
                     <img src="./img/anh1.jpg" alt="" />
                   </div>
                 </div>
-      
+
                 <div class="image_3 image">
                   <img src="./img/anh2.jpg" alt="" />
                 </div>
@@ -74,9 +70,10 @@
           </div>
           <!-- footer section ends -->
         </footer>
-    </div>
-    <script src="main.js">
-  
-    </script>
-</body>
-</html>
+        </div>
+        <script src="main.js">
+
+        </script>
+        </body>
+
+        </html>

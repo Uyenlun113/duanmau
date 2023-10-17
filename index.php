@@ -12,10 +12,9 @@ $dstop10 = loadall_sanpham_top10();
 
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
-
     switch ($act) {
         case "sanpham":
-        
+            $iddm = $_GET['iddm'];
             $dssp = list_category_product($iddm);
             $tendm = load_ten_dm($iddm);
             include "view/danhmuc/sanpham.php";
@@ -91,6 +90,52 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 header('location:index.php');
             }
             include "view/auth/edit_taikhoan.php";
+            break;
+
+        case "cart":
+            include "view/cart/cart.php";
+            break;
+
+        case "add_to_cart":
+            if (!isset($_COOKIE['shopping_cart'])) {
+                $cart = array();
+            } else {
+                $cart = unserialize($_COOKIE['shopping_cart']);
+            }
+            if (isset($_POST['add_to_cart'])) {
+                $product_id = $_POST['product_id'];
+                $product_info = loadone_sanpham($product_id);
+                $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1;
+                if ($quantity > 0) {
+                    $item = array(
+                        'id' => $product_info['id'],
+                        'img' => $product_info['img'],
+                        'name' => $product_info['name'],
+                        'quantity' => $quantity, 
+                        'price' => $product_info['price']
+                    );
+                    if (isset($cart[$product_id])) {
+                        $cart[$product_id]['quantity'] += 1; // Cập nhật số lượng
+                    } else {
+                        $cart[$product_id] = $item;
+                    }
+                    setcookie('shopping_cart', serialize($cart), time() + 3600, '/');
+                    header("Location: index.php?act=cart");
+                } 
+            }
+            break;
+        case "remove_from_cart":
+            if (isset($_GET['product_id'])) {
+                $product_id_to_remove = $_GET['product_id'];
+                if (isset($_COOKIE['shopping_cart'])) {
+                    $cart = unserialize($_COOKIE['shopping_cart']);
+                    if (isset($cart[$product_id_to_remove])) {
+                        unset($cart[$product_id_to_remove]); // Xóa sản phẩm khỏi giỏ hàng
+                        setcookie('shopping_cart', serialize($cart), time() + 3600, '/');
+                    }
+                }
+            }
+            header("Location: index.php?act=cart");
             break;
     }
 } else {
