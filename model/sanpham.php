@@ -21,6 +21,7 @@ function list_category_product( $iddm)
     return  $listCategoryProduct;
 }
 
+//Danh sách sản phẩm
 function list_product($valueSearch, $iddm)
 {
     if($iddm==0){
@@ -49,20 +50,6 @@ function update_sanpham($id, $iddm, $tensp, $giasp, $hinh, $mota)
     else $sql = "update sanpham set iddm='" . $iddm . "', name='" . $tensp . "',price='" . $giasp . "',mota='" . $mota . "' where id=" . $id;
     pdo_execute($sql);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function loadall_sanpham_home()
 {

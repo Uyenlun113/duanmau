@@ -66,6 +66,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm);
                 $thongbao = "Thêm thành công";
+                header("Location: index.php?act=listsp");
             }
             $listdanhmuc = loadall_danhmuc();
             include "sanpham/add.php";
