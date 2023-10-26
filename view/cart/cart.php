@@ -1,4 +1,5 @@
 <?php include "view/header.php"; ?>
+
 <section class="h-100 h-custom" style="background-color: #eee;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -13,9 +14,10 @@
                   </div>
                   <hr class="my-4">
                   <?php 
-                    if (isset($_COOKIE['shopping_cart'])) {
+                    $total_price = 0;
+                    if (isset($_COOKIE['shopping_cart'] )) {
                         $cart = unserialize($_COOKIE['shopping_cart']);
-                        $total_price = 0; // Khởi tạo biến tổng tiền
+                        
                         foreach ($cart as $productId => $item) {
                   ?>
                   <div class="row mb-4 d-flex justify-content-between align-items-center">
@@ -40,10 +42,10 @@
                   <?php
                         $total_price += ($item['price'] * $item['quantity']); // Tính tổng tiền của từng sản phẩm
                     }
-                  } else {
-                      echo "Không có sản phẩm nào trong giỏ hàng.";
-                  }
-                  ?>
+                } else {
+                    echo "Không có sản phẩm nào trong giỏ hàng.";
+                }
+                ?>
                 </div>
               </div>
               <div class="col-lg-4 bg-grey">
@@ -52,7 +54,8 @@
                   <hr class="my-4">
                   <div class="d-flex justify-content-between mb-4">
                     <h5 class="text-uppercase">Tổng</h5>
-                    <h5>$<?= number_format($total_price, 2) ?></h5>
+                    <h5>$<?= 
+                    number_format($total_price, 2) ?></h5>
                   </div>
                   <button type="button" class="btn btn-dark btn-block btn-lg w-100" data-mdb-ripple-color="dark">Thanh
                     toán</button>

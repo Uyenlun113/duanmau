@@ -37,7 +37,7 @@ include "view/header.php";
             <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
               <form method="post" action="index.php?act=add_to_cart">
                 <input type="hidden" name="product_id" value="<?= $sp['id'] ?>">
-                <input type="submit" name="add_to_cart" value="Thêm giỏ hàng">
+                <input type="submit" name="add_to_cart" value="Thêm giỏ hàng" class="btn btn-primary w-60">
               </form>
             </div>
           </div>
