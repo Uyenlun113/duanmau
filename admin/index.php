@@ -87,7 +87,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_GET['id']) ) {
                 delete_sanpham($_GET['id']);
             }
-            $listsanpham = loadall_sanpham("", 0);
+            $listsanpham = list_product("", 0);
             $listdanhmuc = loadall_danhmuc();
             include "sanpham/list.php";
             break;
@@ -101,7 +101,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "updatesp":
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id = $_POST['id'];
-
                 $iddm = $_POST['iddm'];
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
@@ -116,7 +115,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $thongbao = "Cập nhật thành công";
             }
             $listdanhmuc = loadall_danhmuc();
-            $listsanpham = loadall_sanpham("", 0);
+            $listsanpham = list_product("", 0);
             include "sanpham/list.php";
             break;
         case 'dskh':

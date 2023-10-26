@@ -6,15 +6,17 @@
   <div class="row2 form_content ">
     <form action="#" method="POST">
       <div class="row2 mb10 formds_loai">
-        <table>
-          <tr>
-            <th>MÃ LOẠI</th>
-            <th>TÊN LOẠI</th>
-            <th>SỐ LƯỢNG</th>
-            <th>GIÁ NHỎ NHẤT</th>
-            <th>GIÁ LỚN NHÁT</th>
-            <th>GIÁ TRUNG BÌNH</th>
-          </tr>
+        <table class="table align-middle mb-0 bg-white table-bordered">
+          <thead class="table-dark">
+            <tr class="rounded p-2">
+              <th>MÃ LOẠI</th>
+              <th>TÊN LOẠI</th>
+              <th>SỐ LƯỢNG</th>
+              <th>GIÁ NHỎ NHẤT</th>
+              <th>GIÁ LỚN NHÁT</th>
+              <th>GIÁ TRUNG BÌNH</th>
+            </tr>
+          </thead>
           <?php 
                     foreach($dsthongke as $thongke){
                         extract($thongke);

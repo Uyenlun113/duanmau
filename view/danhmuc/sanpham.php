@@ -14,7 +14,6 @@ include "view/header.php";
         ?>
       <div class=" card" style="border-radius: 15px;">
         <a href="index.php?act=sanphamct&idsp=<?= $id ?>">
-
           <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
             <img src="<?= $hinh ?>" style="border-top-left-radius: 15px; border-top-right-radius: 15px;"
               class="img-fluid" alt="Laptop" />
