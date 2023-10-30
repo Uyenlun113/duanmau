@@ -49,11 +49,7 @@
 
       </ul>
     </div>
-    <div class="box_search">
-      <form action="index.php?act=sanpham" method="POST">
-        <input type="text" id="" placeholder="Từ khóa tìm kiếm" name="valueSearch">
-      </form>
-    </div>
+
   </div>
   <!-- DANH MỤC SẢN PHẨM BÁN CHẠY -->
   <div class="mb">

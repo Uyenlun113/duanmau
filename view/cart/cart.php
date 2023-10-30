@@ -17,7 +17,6 @@
                     $total_price = 0;
                     if (isset($_COOKIE['shopping_cart'] )) {
                         $cart = unserialize($_COOKIE['shopping_cart']);
-                        
                         foreach ($cart as $productId => $item) {
                   ?>
                   <div class="row mb-4 d-flex justify-content-between align-items-center">
@@ -26,7 +25,7 @@
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
                       <h6 class="text-muted"><?= $item['name'] ?></h6>
-                      <h6 class="text-black mb-0">Laptop</h6>
+
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                       <h6 class="text-muted"><?= $item['quantity'] ?></h6>

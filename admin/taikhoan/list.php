@@ -39,7 +39,7 @@
                                 <td>' . $taikhoan['email'] . '</td>
                                 <td>' . $taikhoan['address'] . '</td>
                                 <td>' . $taikhoan['tel'] . '</td>
-                                <td>' . $taikhoan['role'] . '</td>
+                                <td>' . ($taikhoan['role'] == 0 ? 'Admin' : 'Khách hàng') . '</td>
                                 <td><a href="'.$suatk.'"><input type="button" value="Sửa"></a> <a href="'.$xoatk.'"><input type="button" value="Xóa"></a></td>
                             </tr>';
                     }

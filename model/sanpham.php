@@ -10,10 +10,9 @@ function delete_sanpham($id)
 {
     $sql = "update sanpham set trangthai = 1 where id=" . $id;
     pdo_execute($sql);
-   
 }
 
-function list_category_product( $iddm)
+function list_category_product($iddm)
 {
     $sql="select * from sanpham where trangthai = 0 and iddm=".$iddm;
     $sql .= " order by id desc";
@@ -66,7 +65,7 @@ function loadall_sanpham_top10()
 
 function load_sanpham_cungloai($id, $iddm)
 {
-    $sql = "select * from sanpham where iddm = $iddm and id <> $id";
+    $sql = "select * from sanpham where trangthai = 0 and iddm = $iddm and id <> $id";
     $result = pdo_query($sql);
     return $result;
 }

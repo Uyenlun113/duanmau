@@ -120,10 +120,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "sanpham/list.php";
             break;
         case 'dskh':
-
+            
             $listtaikhoan = loadall_taikhoan();
             include "taikhoan/list.php";
             break;
+
+
             case "xoatk":
                 if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                     delete_taikhoan($_GET['id']);

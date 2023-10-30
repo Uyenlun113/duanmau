@@ -19,15 +19,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $tendm = load_ten_dm($iddm);
             include "view/danhmuc/sanpham.php";
             break;
-
         case "sanphamct":
             isset($_SESSION['user']);
             $idUser = $_SESSION['user']['id'];
-
             if (isset($_POST['guibinhluan'])) {
                 insert_binhluan($_POST['idpro'], $idUser, $_POST['noidung']);
             }
-
             if (isset($_GET['idsp']) && $_GET['idsp'] > 0) {
                 $sanpham = loadone_sanpham($_GET['idsp']);
                 $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
@@ -101,6 +98,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $cart = array();
             } else {
                 $cart = unserialize($_COOKIE['shopping_cart']);
+                //đọc cookie thành dạng mảng
             }
             if (isset($_POST['add_to_cart'])) {
                 $product_id = $_POST['product_id'];
